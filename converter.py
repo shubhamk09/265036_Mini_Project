@@ -8,7 +8,10 @@ def get_data():
 
 
 def get_ratio(frm, to):
-    return float(to.one_dollar) / float(frm.one_dollar)
+    try:
+        return float(to.one_dollar) / float(frm.one_dollar)
+    except ZeroDivisionError:
+        print("From currency cannot be zero. Error in database\n")
 
 
 def convert(frm, to):
@@ -52,7 +55,7 @@ def show_temp_file():
 def count_lines():
     infile = open("temperature_record.txt", "r")
     countlines = 0
-    for line in infile:
+    for _ in infile:
         countlines += 1
     infile.close()
     return countlines
@@ -81,11 +84,11 @@ def main():
 
         elif choice_2 == 2:
             print("Chose the option\n1. Fahrenheit to celsius\n2. Celsius to fahrenheit\n3. See the logs")
-            choice_3=int(input())
+            choice_3 = int(input())
 
             if choice_3 == 1:
                 fahrenheit = float(input("Enter temperature in fahrenheit:\n"))
-                print("Temperature in celsius is: "+str(to_celsius(fahrenheit)))
+                print("Temperature in celsius is: " + str(to_celsius(fahrenheit)))
 
             elif choice_3 == 2:
                 celsius = float(input("Enter temperature in celsius:\n"))
@@ -93,7 +96,7 @@ def main():
 
             elif choice_3 == 3:
                 show_temp_file()
-                print("Total conversion: "+str(count_lines()))
+                print("Total conversion: " + str(count_lines()))
 
             else:
                 print("Wrong input!")
