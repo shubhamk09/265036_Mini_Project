@@ -182,9 +182,10 @@ def main():
 
             else:
                 print("Wrong input!")
-
+        else:
+            print("---------------------------Wrong input, thank you!-------------------------------")
     else:
-        print("---------------------------Thank you!-------------------------------")
+        print("---------------------------Wrong input, thank you!-------------------------------")
 
 
 if __name__ == "__main__":
