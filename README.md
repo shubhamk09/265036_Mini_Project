@@ -1,6 +1,8 @@
 # 265036_Mini_Project
 stepin mini project
 
+Pytest Status: [![Pytest](https://github.com/shubhamk09/265036_Mini_Project/actions/workflows/python-pytest.yml/badge.svg)](https://github.com/shubhamk09/265036_Mini_Project/actions/workflows/python-pytest.yml)
+
 Main Program : converter.py
 Pytest Program : converter_test.py
 
